@@ -1,5 +1,6 @@
 package controleur;
 
+import personnages.Gaulois;
 import villagegaulois.Village;
 
 public class ControlAcheterProduit {
@@ -16,4 +17,18 @@ public class ControlAcheterProduit {
 	}
 
 	//TODO a completer
+
+	public boolean produitPresentDansLesEtals(String nomProduit) {
+        if(village.rechercherVendeursProduit(nomProduit)==null) {
+            return false;
+        }
+        return true;
+    }
+
+    public Gaulois[] vendeursDuProduit(String nomProduit) {
+        return village.rechercherVendeursProduit(nomProduit);
+    }
+    public String[] donnerEtatVendeur() {
+        return village.donnerEtatMarche();
+    }
 }
